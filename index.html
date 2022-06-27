@@ -1,0 +1,104 @@
+<!-- Home page for board game -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camel Up</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <!-- <div class='flex-container' id='board'>
+
+        <div class='row'>
+            <div class='square' id='square-1'> </div>
+            <div class='square' id='square-2'> </div>
+            <div class='square' id='square-3'> </div>
+            <div class='square' id='square-4'> </div>
+            <div class='square' id='square-5'> </div>
+
+        </div>
+
+        <div class='row'>
+            <div class='square' id='square-6'> </div>
+            <div class='square' id='square-7'> </div>
+
+        </div>
+
+        <div class='row'>
+
+            <div class='square' id='square-8'> </div>
+            <div class='square' id='square-9'> </div>
+            <div class='square' id='square-10'> </div>
+            <div class='square' id='square-11'> </div>
+            <div class='square' id='square-12'> </div>
+            <div class='square' id='square-13'> </div>
+            <div class='square' id='square-14'> </div>
+            <div class='square' id='square-15'> </div>
+        </div>
+    </div> -->
+
+    <!-- Number Dice -->
+    <div id="dice">
+
+        <span id="num"> </span>
+    </div>
+    <button class="dice-roll"> Roll me!</button>
+
+
+    <!-- Color Dice -->
+    <div id="color-dice">
+
+
+    </div>
+
+
+    <script>
+        document.querySelector('.dice-roll').addEventListener('click', () => {
+
+            var number = Math.floor(Math.random() * (3 - 1 + 1) + 1)
+            document.getElementById('num').innerHTML = number;
+            var colNumber = Math.floor(Math.random() * (6 - 1 + 1) + 1)
+            var color = '';
+
+            switch (colNumber) {
+                case 1: {
+                    color = 'red'
+                } break;
+                case 2: {
+                    color = 'purple'
+                } break;
+                case 3: {
+                    color = 'green'
+                } break;
+                case 4: {
+                    color = 'blue'
+                } break;
+                case 5: {
+                    color = 'yellow'
+                } break;
+                case 6: {
+                    if (Math.random() < 0.50) {
+                        color = 'white';
+                    } else {
+                        color = 'black';
+                    }
+                }
+
+            }
+            console.log(color);
+            document.getElementById('color-dice').setAttribute("class", color);
+        })
+
+
+    </script>
+
+
+
+</body>
+
+</html>
